@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbo.Az(fake): avtomobil almaq, satmaq, təzə və işlənmiş avtomobillərin qiyməti Azərbaycan</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="img/favicon-32x32.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="mobile-nav">
+                <div id="logo">
+                    <a href="">
+                        <h1 id="h1-red">turbo.az</h1>
+                    </a>
+                    <a href="">
+                        <h1>bina.az</h1>
+                    </a>
+                    <a href="">
+                        <h1>tap.az</h1>
+                    </a>
+                    <a href="" id="plus"></a>
+                </div>
+                <div id="selects">
+                    <div id="all-marks" class="select" onclick="openNewSec('mark')">
+                        <img src="img/redcar.png" alt="" />
+                        <span>Bütün markalar</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div id="filters" class="select" onclick="openNewSec('filt')">
+                        <img src="img/filter.png" alt="" />
+                        <span>Filtrlər</span>
+                    </div>
+                    <div id="moto" class="select">
+                        <span>Moto</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <p id="elan">Bu gün: <a href="">1608 yeni elan</a></p>
+                </div>
+                <div id="adds">
+                    <img src="img/add.jpg" alt="" />
+                </div>
+            </div>
+            <div id="links">
+                <a href="">Kreditlə</a>
+                <a href="">Barter</a>
+                <a href="">Aksesuarlar</a>
+                <a href="">Şinlər</a>
+                <a href="">İcarə</a>
+            </div>
+            <div class="navbar">
+                <div class="container">
+                    <div class="top-left">
+                        <ul>
+                            <li><a href="#">Tab.az</a></li>
+                            <li><a href="#">Bina.az</a></li>
+                            <li><a href="#">Boss.az</a></li>
+                        </ul>
+                    </div>
+                    <div class="top-right">
+                        <ul>
+                            <li><a href="tel:(012) 505-77-55" id="black">Dəstək: (012) 505-77-55</a></li>
+                            <li><p href="" id="yrdm" onclick="goYardim()">Yardım</p></li>
+                            <li><a href="">RU</a></li>
+                        </ul>
+                        <span class="heart df">
+                            <i class="fa-solid fa-heart"></i>
+                            <p onclick="favorite()">Seçilmişlər</p>
+                        </span>
+                        <div class="user df">
+                            <i class="fa-solid fa-circle-user"></i> 
+                            <p onclick="login()">Giriş</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-buttom">
+                <div class="container">
+                    <div class="buttom-left">
+                        <div class="logo">
+                            <p><b><a href="index.htm">TURBO.AZ</a></b></p>
+                        </div>
+                        <ul>
+                            <li><a href="">Bütün Elanlar</a></li>
+                            <li><a href="">Salonlar</a></li>
+                            <li><a href="">Moto</a></li>
+                            <li id="drp"><a href="">Ehtiyat hissələri və aksesuarlar</a>
+                                <div class="down">
+                                    <a href=""><p>Aksesuarlar</p></a>
+                                    <a href=""><p>Audio və video texnika</p></a>
+                                    <a href=""><p>Avtokosmetika və avtokimya</p></a>
+                                    <a href=""><p>Ehtiyyat hissələri</p></a>
+                                    <a href=""><p>GPS navigatorlar</p></a>
+                                    <a href=""><p>Qeydiyyat nişanları</p></a>
+                                    <a href=""><p>Siqnalzasiyalar</p></a>
+                                    <a href=""><p>Videoqeydiyyatçılar</p></a>
+                                    <a href=""><p>Şinlər disklər və təkərlər</p></a>
+                                    <a href=""><p>Digər</p></a>
+                                </div>
+                            </li>
+                            <li id="drp"><a href="">İcarə</a>
+                                <div class="down">
+                                    <a href=""><p>Avtomobillər</p></a>
+                                    <a href=""><p>Avtobus və mikroavtobuslar</p></a>
+                                    <a href=""><p>Motosiklet və mopedlər</p></a>
+                                    <a href=""><p>Xüsusi texnika</p></a>
+                                    <a href=""><p>Digər</p></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="buttom-right">
+                        <button onclick="yeniElan()"><span>✚</span>Yeni elan</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="secilmisler container">
+            <!-- <h3 class="p20">SEÇİLMİŞ ELANLAR</h3> -->
+            <div class="secilmis-main p20">
+                <div class="text">
+                    <img src="img/fav.svg" alt="">
+                    <p>Bəyəndiyiniz elanları ürək işarəsinə klik edərək seçilmişlərə əlavə edin.</p>
+                </div>
+            </div>
+        </div>
+        <div id="filters-none">
+            <div class="filter-header padding-header">
+              <i class="fa-solid fa-chevron-left" onclick="changePage('home')"></i>
+              <h2>Filtrlər</h2>
+              <span>Sıfırla</span>
+            </div>
+            <div class="filter-header padding-header">
+              <p>Şəhərlər</p>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="bg-gray"></div>
+            <div id="mark-and-model">
+              <h5>Marka və model</h5>
+              <div id="marks">
+                <div class="mark1">
+                  <img src="img/mercedes.png" alt="" />
+                  <p>Mercedes</p>
+                </div>
+                <div class="mark1">
+                  <img src="img/lada.png" alt="" />
+                  <p>Lada (VAZ)</p>
+                </div>
+                <div class="mark1">
+                  <img src="img/honda.png" alt="" />
+                  <p>Hundai</p>
+                </div>
+                <div class="mark1">
+                  <img src="img/kia.png" alt="" />
+                  <p>Kia</p>
+                </div>
+                <div class="mark1">
+                  <img src="img/toyota.png" alt="" />
+                  <p>Toyota</p>
+                </div>
+                <div class="mark1">
+                  <img src="img/bmw.png" alt="" />
+                  <p>Bmw</p>
+                </div>
+                <div class="mark1">
+                  <img src="img/opel.png" alt="" />
+                  <p>Opel</p>
+                </div>
+                <div class="mark1">
+                  <img src="img/Ford.png" alt="" />
+                  <p>Ford</p>
+                </div>
+              </div>
+              <div class="btn">
+                <button class="butun-markalar">Bütün markaları göstər</button>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button class="btns border-left">Hamısı</button>
+              <button class="btns">Yeni</button>
+              <button class="btns border-right">Sürülmüş</button>
+            </div>
+            <div id="filter-inputs">
+              <div class="filter-header filter-bottom">
+                <p>Ban növü</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="filter-header inputs">
+                <p>Yürüş,km</p>
+                <input type="text" id="yurus-min" placeholder="min." />
+                <input type="text" id="yurus-max" placeholder="max." />
+              </div>
+              <div class="filter-header inputs">
+                <p>il</p>
+                <br />
+                <input type="text" id="il-minn" placeholder="min." />
+                <input type="text" id="il-maxx" placeholder="max." />
+              </div>
+              <div class="filter-header inputs">
+                <p>Mühərrikin həcmi,sm<sup>3</sup></p>
+                <input type="text" id="hecm-min" placeholder="min." />
+                <input type="text" id="hecm-max" placeholder="max." />
+              </div>
+              <div class="filter-header inputs">
+                <p>Mühərrikin gücü, a.g.</p>
+                <input type="text" id="guc-min" placeholder="min." />
+                <input type="text" id="guc-max" placeholder="max." />
+              </div>
+              <div class="filter-header filter-bottom">
+                <p>Rəng</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="filter-header filter-bottom">
+                <p>Hansı bazar üçün yığılıb</p>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="bg-gray"></div>
+            </div>
+            <div class="btn-groups">
+              <p>Status</p>
+              <span>yeni</span>
+              <div class="btn-groups-btns">
+                <button>Vacib deyil</button>
+                <button>Satışdadır</button>
+                <button>Sifarişlə</button>
+              </div>
+            </div>
+            <div class="bg-gray"></div>
+            <div class="btn-groups">
+              <p>Yanacaq növü</p>
+              <div class="btn-groups-btns">
+                <button>Vacib deyil</button>
+                <button>Benzin</button>
+                <button>Dizel</button>
+                <button>Qaz</button>
+                <button>Elektro</button>
+                <button>Hibrid</button>
+                <button>Plug-in-Hibrid</button>
+              </div>
+            </div>
+            <div class="bg-gray"></div>
+            <div class="btn-groups">
+              <p>Ötürücü</p>
+              <div class="btn-groups-btns">
+                <button>Vacib deyil</button>
+                <button>Arxa</button>
+                <button>Ön</button>
+                <button>Tam</button>
+              </div>
+            </div>
+            <div class="bg-gray"></div>
+            <div class="btn-groups">
+              <p>Sürətlər qutusu</p>
+              <div class="btn-groups-btns">
+                <button>Vacib deyil</button>
+                <button>Avtomat</button>
+                <button>Variator</button>
+                <button>Mexaniki</button>
+                <button>Robot</button>
+                <button>Reduktor</button>
+              </div>
+            </div>
+            <div class="bg-gray"></div>
+            <div class="yerlerin-sayi btn-groups">
+              <p>Yerlərin sayı</p>
+              <ul>
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+                <li><a href="">8+</a></li>
+              </ul>
+            </div>
+            <div class="bg-gray"></div>
+            <div class="btn-groups">
+              <p>Avtomobilin təhcizatı</p>
+              <div class="checkboxs">
+                <ul>
+                  <li>Yüngül lehimli disklər</li>
+                  <li>ABS</li>
+                  <li>Lyuk</li>
+                  <li>Yağış sensoru</li>
+                  <li>Mərkəzi qapanma</li>
+                  <li>Park radarı</li>
+                  <li>Kondisioner</li>
+                  <li>Oturacaqların isidilməsi</li>
+                  <li>Dəri salon</li>
+                  <li>Ksenon lampalar</li>
+                  <li>Arxa götüntü kamerasi</li>
+                  <li>Yan pərdələr</li>
+                  <li>Oturacaqların ventilyasiyası</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-gray"></div>
+            <div class="btn-groups">
+              <p>Vəziyyəti</p>
+              <ul>
+                <li>Vuruğu yoxdur</li>
+                <li>Rənglənməyib</li>
+              </ul>
+            </div>
+            <div class="bg-gray"></div>
+            <div class="btn-groups">
+              <h6>Qəzalı ehtiyat hissələr üçün</h6>
+              <p>Təmirə ehtyac var və ya ümumiyyətlə yararsız vəziyyətdədir.</p>
+            </div>
+            <div class="bg-gray"></div>
+            <div class="btn-groups">
+              <p>Sahiblərinin sayı</p>
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4 və daha çox</li>
+              </ul>
+            </div>
+            <div class="axtar-btn">
+              <button>Axtar</button>
+            </div>
+        </div>
+        <div id="mark-none">
+            <div class="mark-fixed">
+              <div class="filter-header mark-header">
+                <i class="fa-solid fa-chevron-left" onclick="changePage('home')"></i>
+                <h2>Markalar</h2>
+                <i class="fa-solid fa-chevron-right" style="opacity: 0"></i>
+              </div>
+              <div class="search">
+                <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                <input type="text" id="searchMark" placeholder="Məsələn BMW" />
+              </div>
+              <div class="marks">
+                <p>Populyar</p>
+                <div class="mark">
+                  <img src="img/mercedes.png" alt="" />
+                  <p>Mercedes</p>
+                </div>
+                <div class="mark">
+                  <img src="img/lada.png" alt="" />
+                  <p>Lada (Vaz)</p>
+                </div>
+                <div class="mark">
+                  <img src="img/honda.png" alt="" />
+                  <p>Hundai</p>
+                </div>
+                <div class="mark">
+                  <img src="img/kia.png" alt="" />
+                  <p>Kia</p>
+                </div>
+                <div class="mark">
+                  <img src="img/toyota.png" alt="" />
+                  <p>Toyota</p>
+                </div>
+                <div class="mark">
+                  <img src="img/bmw.png" alt="" />
+                  <p>BMW</p>
+                </div>
+                <div class="mark">
+                  <img src="img/opel.png" alt="" />
+                  <p>Opel</p>
+                </div>
+                <div class="mark">
+                  <img src="img/Ford.png" alt="" />
+                  <p>Ford</p>
+                </div>
+                <div id="markalar"></div>
+              </div>
+            </div>
+        </div>
+        <div class="login">
+            <a href="index.htm" class="fa-solid fa-x"></a>
+            <div class="loginform">
+                <div class="login-sum">
+                    <h1>TURBO.AZ</h1>
+                    <p class="txtgray p10">Öz elanlarınıza baxmağın, onları redaktə və <br> bərpa etməyin rahat yolu</p>
+                    <button>Telefon nömrəsi ilə giriş</button> <br>
+                    <button>Biznes hesabınıza giriş</button>
+                </div>
+            </div>
+            <p class="txtgray p20">Saytda avtorizasiyadan keçməklə siz Turbo.az-ın və qəbul etdiyinizi təsdiqləmiş olursunuz.</p>
+        </div>
+        <div class="yardim">
+            <div class="y-top">
+                <a class="fa-solid fa-chevron-left" href="index.htm"></a>
+                <p>Yardım</p>
+                <i class="fa-solid fa-chevron-right" style="color: #fff;"></i>
+            </div> <hr>
+            <div class="y-btns">
+                <button>Populyar suallar</button>
+                <button>Elanlar</button>
+            </div> <hr>
+            <p id="ps">Populyar suallar</p>
+            <div class="accordions">
+                <button class="accordion">Elanım niyə dərc olunmadı?</button>
+                <div class="panel">
+                    <p>Çox güman ki, siz elan yerləşdirmə Qaydalarından hər hansısa birinə və ya bir neçəsinə əməl etməmisiniz.
+                        Səbəb daha ətraflı şəkildə elanı yerləşdirərkən qeyd etdiyiniz email ünvanına göndərilib.
+                        Həmçinin elanın dərc olunmama səbəbi ilə
+                        saytın tam (desktop) versiyasında Şəxsi kabinetdəki “Mənim elanlarım” > “İmtina olunmuş” bölməsində;
+                        saytın mobil versiyasında Şəxsi kabinetdəki “İmtina olunmuş” bölməsində;
+                        tətbiqdə isə Şəxsi kabinetdəki “İmtina olunmuş” bölməsində tanış ola bilərsiniz.</p>
+                </div> <hr>
+                <button class="accordion">Elana necə düzəliş edim?</button>
+                <div class="panel">
+                    <p>Şəxsi kabinetdə düzəliş üçün: <br>
+                        Şəxsi kabinetə daxil olun.
+                        Saytın tam versiyasındasınızsa,“Mənim elanlarım” səhifəsini açın, mobil versiyada və ya tətbiqdəsinizsə, növbəti addıma keçin.
+                        Saytın tam və ya mobil versiyasında “Saytda” bölməsini, tətbiqdə isə “Hazırda saytda” bölməsini seçin.
+                        Düzəliş etmək istədiyiniz elanın aşağısında Düzəliş et düyməsini görəcəksiniz. Onu sıxın.
+                        Lazım olan düzəlişləri etdikdən sonra Elanı yenilə düyməsini sıxın.</p>
+                </div> <hr>
+                <button class="accordion">Elana necə yerləşdirim?</button>
+                <div class="panel">
+                    <p>Siz elanı Turbo.az saytının tam (desktop) və ya mobil versiyasında, eləcə də mobil tətbiqdə yerləşdirə bilərsiniz.
+                        Saytın tam və ya mobil versiyasında elan yerləşdirmək üçün:
+                        Tam versiyada yuxarı sağ küncdəki Yeni elan düyməsini, mobil versiyada isə ekranın aşağısındakı Yeni elan və ya yuxarı sağ küncdəki + düyməsini sıxın.
+                        Açılan səhifədə xanaları dolduraraq nəqliyyat vasitəsi barədə məlumatları qeyd edin. Nəzərə alın ki, bu məlumatları potensial alıcılar oxuyacaq.
+                        Elanı Şəxsi kabinetinizdən yerləşdirirsinizsə, Əlaqə məlumatları hissəsində profiliniz üçün təsdiqlənmiş telefon nömrəsi müvafiq xanaya doldurulacaq.
+                        Əgər elanı Şəxsi kabinetə daxil olmadan yerləşdirirsinizsə, onun yoxlamaya göndərilməsi üçün Əlaqə məlumatları hissəsində qeyd etdiyiniz telefon nömrəsini təsdiqləməlisiniz.
+                        Demək olar ki, hazırdır! Sadəcə Elan yerləşdir düyməsini sıxmaq qalır: Şəxsi kabinetdən yerləşdirirsinizsə, elan dərhal yoxlamaya göndəriləcək; daxil olmamısınızsa, elan telefon nömrənizi təsdiqlədikdən sonra yoxlamaya göndəriləcək və bütün qaydalara əməl olunduğu təqdirdə dərc olunacaq.</p>
+                </div> <hr>
+                <button class="accordion">Elana necə silim?</button>
+                <div class="panel">
+                    <p>silme qaqa</p>
+                </div> <hr>
+            </div>
+        </div>
+        <div class="yenielan">
+            <div class="container">
+                <h3>ELAN YERLƏŞDİRMƏK</h3>
+                <ul>
+                    <li>Üç ay ərzində bir nəqliyyat vasitəsi yalnız bir dəfə pulsuz dərc oluna bilər.</li>
+                    <li>Üç ay ərzində təkrar və ya oxşar elanlar (marka/model, rəng) ödənişlidir.</li>
+                    <li>Elanınızı saytın ön sıralarında görmək üçün "İrəli çək" xidmətindən istifadə edin.</li>
+                </ul>
+                <form>
+                    <div class="product">
+                        <div class="pr-inside">
+                            <label>Marka <span>*</span></label>
+                            <select id="">
+                                <option value="">Seçin</option>
+                            </select>
+                        </div>
+                        <div class="pr-inside">
+                            <label>Yanacaq növü <span>*</span></label>
+                            <select id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="pr-inside">
+                            <label>Model <span>*</span></label>
+                            <select id="">
+                                <option value="">Seçin</option>
+                            </select>
+                        </div>
+                        <div class="pr-inside">
+                            <label>Ötürücü <span>*</span></label>
+                            <select id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="pr-inside">
+                            <label>Ban növü <span>*</span></label>
+                            <select id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="pr-inside">
+                            <label>Sürətlər qutusu <span>*</span></label>
+                            <select id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="pr-inside" id="pr-inside">
+                            <label>Yürüş <span>*</span></label>
+                            <input type="text"> <input type="radio" name="check" id="">km <input type="radio" name="check" id="">mi
+                        </div>
+                        <div class="pr-inside">
+                            <label>İl <span>*</span></label>
+                            <select id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="pr-inside">
+                            <label>Rəng <span>*</span></label>
+                            <select id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="pr-inside">
+                            <label>Mühərrikin həcmi, sm<sup>3</sup><span>*</span></label>
+                            <select id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="pr-inside">
+                            <label>Qiymət <span>*</span></label>
+                            <input type="text"> <input type="radio" name="check" id="">AZN <input type="radio" name="check" id="">USD <input type="radio" name="check" id="">EUR 
+                        </div>
+                        <div class="pr-inside">
+                            <label>Mühərrikin gücü, a.g.<span>*</span></label>
+                            <select id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="pr-inside">
+                            <label>Neçənci sahibisiniz?</label>
+                            <select id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="pr-inside">
+                            <label>Hansı bazar üçün yığılıb</label>
+                            <select id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="product2 product">
+                        <label>Vəziyyəti</label>
+                        <div>
+                            <input type="radio" name="" id="">Vuruğu var
+                            <p>Bir və ya bir neçə detalı dəyişdirilib və ya təmir olunub.</p>
+                        </div>
+                        <div>
+                            <input type="radio" name="" id="">Rənglənib
+                            <p>Bir və ya bir neçə detalı rənglənib və ya kosmetik işlər görülüb.</p>
+                        </div>
+                        <div>
+                            <input type="radio" name="" id="">Qəzalı və ya ehtiyat hissələr üçün
+                            <p>Təmirə ehtiyacı var və ya ümumiyyətlə yararsız vəziyyətdədir.</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <label>Yerlərin sayı</label>
+                        <div class="cboxs">
+                            <input type="checkbox" name="check"> 1
+                            <input type="checkbox" name="check"> 2
+                            <input type="checkbox" name="check"> 3
+                            <input type="checkbox" name="check"> 4
+                            <input type="checkbox" name="check"> 5
+                            <input type="checkbox" name="check"> 6
+                            <input type="checkbox" name="check"> 7
+                            <input type="checkbox" name="check"> 8+
+                            <input type="checkbox" name="check"> Qeyd olunmasın
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">Kreditlə
+                            <input type="checkbox" name="" id="">Barter mümkündür
+                        </div>
+                    </div>
+                    <div class="product">
+                        <label>VIN-kod</label>
+                        <input type="text"><a href="">VIN-kodu haradan tapmaq olar?</a>
+                    </div>
+                    <div class="product">
+                        <label>Əlavə məlumat</label>
+                        <textarea name="" id=""></textarea>
+                    </div>
+                </form>
+                <form class="form2">
+                    <h2>Avtomobilin təchizatı</h2>
+                    <div class="avto-checks">
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Yüngül lehimli disklər</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>ABS</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Lyuk</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Yağış sensoru</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Oturacaqların isidilməsi</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Yan pərdələr</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Mərkəzi qapanma</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Park radarı</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Kondisioner</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Dəri salon</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Ksenon lampalar</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Arxa görüntü kamerası</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label>Oturacaqların ventilyasiyası</label>
+                        </span>
+                    </div>
+                </form> <br>
+                <div class="sekiller">
+                    <h2>Şəkillər</h2> <br>
+                    <img src="img/blabla.png" style="width: 100%;"> <br>
+                    <div class="list df">
+                        <ul>
+                            <li>Şəkillər Azərbaycan Respublikasının ərazisində çəkilməlidir.</li>
+                            <li>Şəkillər yaxşı keyfiyyətdə olmalıdır. Nəqliyyat vasitəsi yaxşı işıqlandırılmış olmalı, şəkillərin üzərində loqotip və digər yazılar olmamalıdır. Skrinşotlar qəbul olunmur.</li>
+                        </ul>
+                        <ul>
+                            <li>Avtosalonda çəkilmiş şəkillər qeydiyyatdan keçmiş avtosalonun hesabından уerləşdirilməlidir.</li>
+                            <li>Şəxsi sahibi tərəfindən satılan nəqliyyat vasitəsinin şəkli avtosalon/rəsmi servis ərazisində və ya yaxınlığında çəkilməməlidir.</li>
+                        </ul>
+                    </div>
+                </div>
+                <form class="form3">
+                    <span>
+                        <h2 class="p10">Əlaqə</h2>
+                        <p class="txtgray p10">Elan dərc olunduqdan sonra əlaqə məlumatları ilə bağlı heç bir dəyişiklik həyata keçirilmir.</p>
+                    </span>
+                    <label for="">Adınız <span>*</span></label>
+                    <input type="text" name="" id=""> <br>
+                    <label for="">Şəhər  <span>*</span></label>
+                    <select name="" id="">
+                        <option value="">Baki</option>
+                    </select> <br>
+                    <label for="">Email <span>*</span></label>
+                    <input type="email" name="" id=""> <br>
+                    <label for="">Telefon nömrəsi <span>*</span></label>
+                    <input type="text"> <br>
+                    <div class="end-right"><button>Davam et</button></div>  <br>
+                    <p class="txtgray p10">Elan yerləşdirərək, siz Turbo.az-ın <a href="">İstifadəçi razılaşması</a>  və <a href="">Qaydaları</a>  ilə razı olduğunuzu təsdiq edirsiniz</p>
+                </form>
+            </div>
+        </div>
+        <div class="main-search">
+            <div class="container">
+                <div class="inp-top">
+                    <select id="marka">
+                        <option value="" disabled selected hidden>Marka</option>
+                    </select>
+                    <select id="model">
+                        <option value="" disabled selected hidden>Model</option>
+                    </select>
+                    <div class="btn-group df">
+                        <button class="activate">Hamısı</button>
+                        <button>Yeni</button>
+                        <button>Sürülmüş</button>
+                    </div>
+                    <select name="" id="seher">
+                        <option value="" disabled selected hidden>Şəhər</option>
+                    </select>
+                </div>
+                <div class="inp-top">
+                    <div class="couple-inp df">
+                        <input type="text" id="qiymet-min" placeholder="Qiymət, min.">
+                        <input type="text" id="qiymet-max" placeholder="maks.">
+                    </div>
+                    <div class="vlt-group df">
+                        <select id="valyuta">
+                            <option value="">AZN</option>
+                        </select>
+                        <button onclick="bgRed(this) , kreditBarter('kredit')" id="kredit">Kredit</button>
+                        <button onclick="bgRed(this) , kreditBarter('barter')" id="barter">Barter</button>
+                    </div>
+                    <select id="ban">
+                        <option value="" disabled selected hidden>Ban növü</option>
+                    </select>
+                    <div class="slc-group df">
+                        <select id="il-min">
+                            <option value="" disabled selected hidden>İl, min.</option>
+                        </select>
+                        <select id="il-max">
+                            <option value="" disabled selected hidden>maks.</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="hidden-inp">
+                    <div class="inp-top">
+                        <select id="reng">
+                            <option value="" disabled selected hidden>Rəng</option>
+                        </select>
+                        <select id="yanacaq">
+                            <option value="" disabled selected hidden>Yanacaq növü</option>
+                        </select>
+                        <select id="oturucu">
+                            <option value="" disabled selected hidden>Ötürücü</option>
+                        </select>
+                        <select name="" id="suretlerqutusu">
+                            <option value="" disabled selected hidden>Sürətlər qutusu</option>
+                        </select>
+                    </div>
+                    <div class="inp-top">
+                        <div class="slc-group df">
+                            <select id="il-min">
+                                <option value="" disabled selected hidden>Həcm (sm), min.</option>
+                            </select>
+                            <select id="il-max">
+                                <option value="" disabled selected hidden>maks.</option>
+                            </select>
+                        </div>
+                        <div class="couple-inp df">
+                            <input type="number" placeholder="Güc (a. g.), min.">
+                            <input type="number" placeholder="maks.">
+                        </div>
+                        <div class="couple-inp df">
+                            <input type="number" placeholder="Yürüş (km), min.">
+                            <input type="number" placeholder="maks.">
+                        </div>
+                    </div>
+                    <div class="inp-top">
+                        <div class="btn-group df">
+                            <button class="activate">Hamısı</button>
+                            <button>Salonlar</button>
+                            <button>Şəxsi</button>
+                        </div>
+                        <select>
+                            <option value="" disabled selected hidden>Sahiblərin sayı</option>
+                        </select>
+                        <select>
+                            <option value="" disabled selected hidden>Yerlərin sayı</option>
+                        </select>
+                        <select>
+                            <option value="" disabled selected hidden>Hansı bazar üçün yığılıb</option>
+                        </select>
+                    </div>
+                    <div class="inp-top vlt-group">
+                        <button onclick="bgRed(this)">Vuruğu yoxdur</button>
+                        <button onclick="bgRed(this)">Rənglənməyib</button>
+                        <button onclick="bgRed(this)">Yanlız qəzalı avtomobillər</button>
+                        <select id="">
+                            <option value="" disabled selected hidden>Status</option>
+                        </select>
+                    </div> 
+                    <p class="avt p10">Avtomobilin təchizatı</p>
+                    <div class="checkboxs vlt-group">
+                        <button onclick="bgRed(this)">Yüngül lehimli disklər</button>
+                        <button onclick="bgRed(this)">ABS</button>
+                        <button onclick="bgRed(this)">Lyuk</button>
+                        <button onclick="bgRed(this)">Yağış sensoru</button>
+                        <button onclick="bgRed(this)">Mərkəzi qapanma</button>
+                        <button onclick="bgRed(this)">Park radarı</button>
+                        <button onclick="bgRed(this)">Kondisioner</button>
+                        <button onclick="bgRed(this)">Oturacaqların isidilməsi</button>
+                        <button onclick="bgRed(this)">Dəri salon</button>
+                        <button onclick="bgRed(this)">Ksenon lampalar</button>
+                        <button onclick="bgRed(this)">Arxa görüntü kamerası</button>
+                        <button onclick="bgRed(this)">Yan pərdələr</button>
+                        <button onclick="bgRed(this)">Oturacaqların vertilyasiyasi</button>
+                    </div>
+                </div>
+                <div class="mi-end container df">
+                    <p>Bugün:<a href=""> 1641 yeni elan</a></p>
+                    <div class="end-right df">
+                        <a href="index.htm">Sıfırla</a>
+                        <p href="" id="textA"   onclick="filterCoxalt()">Daha çox filtr <i class="fa-solid fa-chevron-down"></i></p>
+                        <button id="goster" onclick="showCard()">Elanları göstər</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="desk-main">
+        <div class="container">
+            <h4>PREMİUM ELANLAR</h4>
+        </div>
+        <div class="cards container">
+            
+        </div>
+        <div id="menu">
+            <div id="home">
+                <i class="fa-solid fa-house" onclick="changePage('home')"></i>
+                <p>Əsas</p>
+            </div>
+            <div id="liked">
+                <i class="fa-solid fa-heart" id="faheart" onclick="changePage( 'like')"></i>
+                <p>Seçilmişlər</p>
+            </div>
+            <div id="new">
+                <img src="img/plus.svg" alt="yeni elan" />
+                <p id="new-p">Yeni elan</p>
+            </div>
+            <div id="user">
+                <i class="fa-solid fa-circle-user"></i>
+                <p>Kabinet</p>
+            </div>
+            <div id="bar">
+                <i class="fa-solid fa-bars"></i>
+                <p>Daha çox</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="all-secs">
+            <div id="sec1">
+                <a href="">Qaydalar</a>
+                <a href="">İstifadəçi razılaşması</a>
+                <a href="">Reklam yerləşdirin</a>
+            </div>
+            <div id="sec2">
+                <p>Dəstək xidməti</p>
+                <p id="number">(012) 505-77-55</p>
+                <span>İş saatları — Həftə içi: 09:00-19:00 | Şənbə: 09:00-13:00</span>
+                <div id="footer-icons">
+                    <div class="icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="sec3">
+                <a href="">Tam versiya</a>
+                <a href="">Русский язык</a>
+                <span>Saytın Administrasiyası reklam bannerlərinin və yerləşdirilmiş elanların məzmununa görə məsuliyyət daşımır.</span>
+                <span>© 2006-2024 Digital Classifieds MMC. VÖEN: 1405631661</span>
+            </div>
+        </div>
+        <div class="ft-top container p20">
+            <a href="">Reklam yerləşdirin</a>
+            <div class="df">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <a><i class="fa-solid fa-envelope"></i> turbo@turbo.az</a>
+                <a><i class="fa-solid fa-phone"></i> (012) 505-77-55</a>
+            </div>
+        </div> <hr>
+        <div class="footermarkalar container p20">
+            <span id="footerlist"></span>
+        </div> <hr>
+        <div class="ft-bottom container p20">
+            <a href="">Qaydalar</a>
+            <a href="">Qanunlar</a>
+            <a href="">İstifadəçi razılaşması</a>
+            <a href="">Məxfilik siyasəti</a>
+        </div>
+        <div class="ft-end p20">
+            <span class="container"><p>Saytın Administrasiyası reklam bannerlərinin və yerləşdirilmiş <br> elanların məzmununa görə məsuliyyət daşımır.</p>
+            <p>2006-2024 Digital Classifieds MMC. VÖEN: 1405631661 <a href="">Mobil versiyasi</a></p></span>
+        </div>
+    </footer>
+    <script src="myscript.js"></script>
+</body>
+</html>
