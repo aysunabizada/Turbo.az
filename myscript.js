@@ -31,7 +31,9 @@ const markNone = document.querySelector('#mark-none');
 const kredit = document.querySelector('#kredit');
 const barter = document.querySelector('#barter');
 const yardim = document.querySelector('.yardim');
-
+const dahaCox = document.querySelector('#daha-cox');
+const mobilnav = document.querySelector('#mobile-nav');
+const likedCars = [];
 let data = {
     "cars": [
         {
@@ -992,7 +994,12 @@ function kreditBarter(arg) {
     });
 }
 
-const likedCars = []
+//markalari cixaran (mobilde)
+const brand = new Set(data.cars.map((item) => item.brand));
+brand.forEach(
+    (item) => (markalar.innerHTML += `<p onclick="filterForBrand('${item.toLowerCase()}')">${item}</p>`)
+);
+
 //masinlari like etmek ve secilmislere atmaq
 let f = true;
 function like(i, id) {
@@ -1048,10 +1055,26 @@ function sil(id) {
     likedCars.splice(index, 1);
 }
 
+//select value sifirlayan
+function sifirla(){
+    marka.value = ''
+    model.value = ''
+    seher.value = ''
+    ban.value  = ''
+    valyuta.val = ''
+    ilMax.value = ''
+    ilMin.value = ''
+    qiymetMax.value = ''
+    qiymetMin.value = ''
+    showCard()
+}
+
 const home = document.querySelector("#home");
+const bar = document.querySelector("#bar");
 const liked = document.querySelector("#liked");
 const fahouse = document.querySelector(".fa-house");
 const faheart = document.querySelector("#faheart");
+const fabars = document.querySelector(".fa-bars");
 
 //mobil secilmislere geden
 function changePage(x){
@@ -1092,6 +1115,15 @@ function changePage(x){
                     </div>`
             }
         }
+    }
+    else if(x == 'dahacox'){
+        dahaCox.style.display = 'block'
+        mobilnav.style.display = 'none'
+        cards.innerHTML = ''
+        fabars.style.color = '#ca1016'
+        bar.style.color = '#ca1016'
+        links.style.display = 'none'
+    
     }
     else if(x == 'home') {
         liked.style.color = 'initial'

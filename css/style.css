@@ -96,7 +96,7 @@
 .card-sum{padding: 15px; font-size: .85em;}
 .card-sum span{color: #808080d8; font-size: .88em;}
 .card-img{position: relative }
-.card-img i,.heart,.user, #goster, #yrdm { cursor: pointer }
+.card-img i,.heart,.user, #goster, #yrdm,#sifir { cursor: pointer }
 .card-img .fa-heart{
     top: 6%;
     right: 6%;
@@ -373,10 +373,55 @@ footer{background-color: #f6f7fa;}
     padding: 15px 0;
     border-bottom:  1px solid #e2e3e4;
 }
+.loginform{
+    width: 400px;
+    height: 300px;
+    margin: 5vh auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-sum button{
+    padding: 18px;
+    width: 300px;
+    border-radius: 5px;
+    margin: 8px 0;
+    background: #4B8AF9;
+    border: 0;
+    color: #fff;
+    font-size: 1em;
+}
+.login a{
+    border: 1px solid #b1b5c7; 
+    padding: 8px 10px; 
+    border-radius: 50%; 
+    color: gray;
+    margin: 50px;
+}
+.login p:last-child{text-align: center; margin-left: 10px;}
+.login-sum button:last-child{
+    background: #fff;
+    border: 2px solid #4B8AF9;
+    color: #4B8AF9;
+}
+#daha-cox h6 {
+    padding: 19px;
+    font-size: 1em;
+    text-align: center;
+    color: #212c3a;
+}
+.bg-white a {
+    display: block;
+    padding: 19px 15px;
+    font-size: 1em;
+    color: #212c3a;
+}
+.border {border-bottom: 1px solid #eff0f1;}
 .marks,.mark-header{padding: 20px;}
 .marks-js{ display: block !important;}
 .navbar .container, .nav-buttom .container, .ft-top,.ft-bottom,.ft-end
-,.footermarkalar, .secilmisler,.main-search, .yenielan, .login, .yardim,#mark-none,#filters-none{display: none;}
+,.footermarkalar, .secilmisler,.main-search, .yenielan, .login, .yardim,#mark-none,#filters-none, #daha-cox{display: none;}
 
 @media only screen and (min-width: 768px){
     .ft-top,.ft-bottom,.ft-end, .footermarkalar, .main-search{display: flex;}
@@ -390,6 +435,7 @@ footer{background-color: #f6f7fa;}
         justify-content: space-between;
         align-items: center;
     }
+    .loginform{box-shadow: #64646f33 0px 7px 29px 0px;}
     .navbar{
         background-color: #F6F7FB;
         padding: 10px 0;
@@ -707,37 +753,4 @@ footer{background-color: #f6f7fa;}
         border: 0;
     }
     .y-btns button:first-child{background: #CA1016; color: #fff;}
-    .loginform{
-        width: 400px;
-        height: 300px;
-        margin: 5vh auto;
-        box-shadow: #64646f33 0px 7px 29px 0px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .login-sum button{
-        padding: 18px;
-        width: 300px;
-        border-radius: 5px;
-        margin: 8px 0;
-        background: #4B8AF9;
-        border: 0;
-        color: #fff;
-        font-size: 1em;
-    }
-    .login a{
-        border: 1px solid #b1b5c7; 
-        padding: 8px 10px; 
-        border-radius: 50%; 
-        color: gray;
-        margin: 50px;
-    }
-    .login p:last-child{text-align: center;}
-    .login-sum button:last-child{
-        background: #fff;
-        border: 2px solid #4B8AF9;
-        color: #4B8AF9;
-    }
 }

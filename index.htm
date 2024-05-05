@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turbo.Az(fake): avtomobil almaq, satmaq, təzə və işlənmiş avtomobillərin qiyməti Azərbaycan</title>
+    <title>Turbo.Az: avtomobil almaq, satmaq, təzə və işlənmiş avtomobillərin qiyməti Azərbaycan</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -130,13 +130,13 @@
         </div>
         <div id="filters-none">
             <div class="filter-header padding-header">
-              <i class="fa-solid fa-chevron-left" onclick="changePage('home')"></i>
-              <h2>Filtrlər</h2>
-              <span>Sıfırla</span>
+                <i class="fa-solid fa-chevron-left" onclick="changePage('home')"></i>
+                <h2>Filtrlər</h2>
+                <span>Sıfırla</span>
             </div>
             <div class="filter-header padding-header">
-              <p>Şəhərlər</p>
-              <i class="fa-solid fa-chevron-down"></i>
+                <p>Şəhərlər</p>
+                <i class="fa-solid fa-chevron-down"></i>
             </div>
             <div class="bg-gray"></div>
             <div id="mark-and-model">
@@ -309,8 +309,8 @@
             </div>
             <div class="bg-gray"></div>
             <div class="btn-groups">
-              <h6>Qəzalı ehtiyat hissələr üçün</h6>
-              <p>Təmirə ehtyac var və ya ümumiyyətlə yararsız vəziyyətdədir.</p>
+                <h6>Qəzalı ehtiyat hissələr üçün</h6>
+                <p>Təmirə ehtyac var və ya ümumiyyətlə yararsız vəziyyətdədir.</p>
             </div>
             <div class="bg-gray"></div>
             <div class="btn-groups">
@@ -386,6 +386,38 @@
                 </div>
             </div>
             <p class="txtgray p20">Saytda avtorizasiyadan keçməklə siz Turbo.az-ın və qəbul etdiyinizi təsdiqləmiş olursunuz.</p>
+        </div>
+        <div id="daha-cox">
+            <div class="bg-white">
+                <h6>Daha çox</h6>
+            </div>
+            <div class="bg-gray"></div>
+            <div class="bg-white">
+                <a href="">Русский язык</a>
+            </div>
+            <div class="bg-gray">
+            </div>
+            <div class="bg-white">
+                <a href="">Yardım</a>
+            </div>
+            <div class="bg-gray">
+            </div>
+            <div class="bg-white">
+                <a href="">Moto</a>
+            </div>
+            <div class="bg-gray"></div>
+            <div class="bg-white border">
+                <a href="">Bütün elanlar</a>
+            </div>
+            <div class="bg-white border">
+                <a href="">Salonlar</a>
+            </div>
+            <div class="bg-white border">
+                <a href="">Ehtiyat hissələri və aksesuarlar</a>
+            </div>
+            <div class="bg-white border"><a href="">İcarə</a></div>
+            <div class="bg-white border"><a href="">Bizimlə əlaqə</a></div>
+            <div class="bg-gray big-gray"></div>
         </div>
         <div class="yardim">
             <div class="y-top">
@@ -788,7 +820,7 @@
                 <div class="mi-end container df">
                     <p>Bugün:<a href=""> 1641 yeni elan</a></p>
                     <div class="end-right df">
-                        <a href="index.htm">Sıfırla</a>
+                        <a onclick="sifirla()" id="sifir">Sıfırla</a>
                         <p href="" id="textA"   onclick="filterCoxalt()">Daha çox filtr <i class="fa-solid fa-chevron-down"></i></p>
                         <button id="goster" onclick="showCard()">Elanları göstər</button>
                     </div>
@@ -816,11 +848,11 @@
                 <img src="img/plus.svg" alt="yeni elan" />
                 <p id="new-p">Yeni elan</p>
             </div>
-            <div id="user">
+            <div id="user" onclick="login()">
                 <i class="fa-solid fa-circle-user"></i>
                 <p>Kabinet</p>
             </div>
-            <div id="bar">
+            <div id="bar" onclick="changePage( 'dahacox')">
                 <i class="fa-solid fa-bars"></i>
                 <p>Daha çox</p>
             </div>
