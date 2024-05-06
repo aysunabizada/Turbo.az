@@ -143,8 +143,8 @@
             <h5>Marka və model</h5>
             <div id="marks">
                 <div class="mark1">
-                  <img src="img/mercedes.png" alt="" />
-                  <p>Mercedes</p>
+                    <img src="img/mercedes.png" alt="" />
+                    <p>Mercedes</p>
                 </div>
                 <div class="mark1">
                   <img src="img/lada.png" alt="" />
@@ -328,51 +328,27 @@
         </div>
         <div id="mark-none">
             <div class="mark-fixed">
-              <div class="filter-header mark-header">
-                <i class="fa-solid fa-chevron-left" onclick="changePage('home')"></i>
-                <h2>Markalar</h2>
-                <i class="fa-solid fa-chevron-right" style="opacity: 0"></i>
-              </div>
-              <div class="search">
-                <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
-                <input type="text" id="searchMark" placeholder="Məsələn BMW" />
-              </div>
-              <div class="marks">
-                <p>Populyar</p>
-                <div class="mark">
-                  <img src="img/mercedes.png" alt="" />
-                  <p>Mercedes</p>
+                <div class="filter-header mark-header">
+                    <i class="fa-solid fa-chevron-left" onclick="changePage('home')"></i>
+                    <h2>Markalar</h2>
+                    <i class="fa-solid fa-chevron-right" style="opacity: 0"></i>
                 </div>
-                <div class="mark">
-                  <img src="img/lada.png" alt="" />
-                  <p>Lada (Vaz)</p>
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchMark" placeholder="Məsələn BMW" />
                 </div>
-                <div class="mark">
-                  <img src="img/honda.png" alt="" />
-                  <p>Hundai</p>
+                <div class="marks">
+                    <p>Populyar</p>
+                    <div class="mark" onclick="filterForBrand('mercedes')"><img src="img/mercedes.png" alt="" /><p>Mercedes</p></div>
+                    <div class="mark" onclick="filterForBrand('lada')"><img src="img/lada.png" alt="" /><p>Lada (Vaz)</p></div>
+                    <div class="mark" onclick="filterForBrand('hundai')"><img src="img/honda.png" alt="" /><p>Hundai</p></div>
+                    <div class="mark" onclick="filterForBrand('kia')"><img src="img/kia.png" alt="" /><p>Kia</p></div>
+                    <div class="mark" onclick="filterForBrand('toyota')"><img src="img/toyota.png" alt="" /><p>Toyota</p></div>
+                    <div class="mark" onclick="filterForBrand('bmw')"><img src="img/bmw.png" alt="" /><p>BMW</p></div>
+                    <div class="mark" onclick="filterForBrand('opel')"><img src="img/opel.png" alt="" /><p>Opel</p></div>
+                    <div class="mark" onclick="filterForBrand('ford')"><img src="img/Ford.png" alt="" /><p>Ford</p></div>
+                    <div id="markalar"></div>
                 </div>
-                <div class="mark">
-                  <img src="img/kia.png" alt="" />
-                  <p>Kia</p>
-                </div>
-                <div class="mark">
-                  <img src="img/toyota.png" alt="" />
-                  <p>Toyota</p>
-                </div>
-                <div class="mark">
-                  <img src="img/bmw.png" alt="" />
-                  <p>BMW</p>
-                </div>
-                <div class="mark">
-                  <img src="img/opel.png" alt="" />
-                  <p>Opel</p>
-                </div>
-                <div class="mark">
-                  <img src="img/Ford.png" alt="" />
-                  <p>Ford</p>
-                </div>
-                <div id="markalar"></div>
-              </div>
             </div>
         </div>
         <div class="login">

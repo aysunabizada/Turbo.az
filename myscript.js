@@ -4,6 +4,7 @@ const nav = document.querySelector("nav");
 const mainsearch = document.querySelector(".main-search");
 const textA = document.querySelector("#textA");
 const footerlist = document.querySelector("#footerlist");
+const logo = document.querySelector("#logo");
 const footermarkalar = document.querySelector(".footermarkalar");
 const main = document.querySelector("main");
 const body = document.querySelector("body");
@@ -33,6 +34,7 @@ const barter = document.querySelector('#barter');
 const yardim = document.querySelector('.yardim');
 const dahaCox = document.querySelector('#daha-cox');
 const mobilnav = document.querySelector('#mobile-nav');
+const searchMark = document.querySelector('#searchMark');
 const likedCars = [];
 let data = {
     "cars": [
@@ -941,9 +943,8 @@ function showCard() {
             item.city.includes(seher.value) && 
             item.banType.includes(ban.value) &&
             item.currency.includes(valyuta.value) &&
-            (ilMax.value >= item.year || ilMin.value <= item.year )
-            // (+qiymetMax.value >= item.price ) ||
-            // (+qiymetMin.value <= item.price ) 
+            (ilMax.value >= item.year || ilMin.value <= item.year ) &&
+            (+qiymetMax.value >= item.price ) || (+qiymetMin.value <= item.price ) 
         )
         .forEach(item => {
             kod += `
@@ -999,6 +1000,37 @@ const brand = new Set(data.cars.map((item) => item.brand));
 brand.forEach(
     (item) => (markalar.innerHTML += `<p onclick="filterForBrand('${item.toLowerCase()}')">${item}</p>`)
 );
+
+
+//mobilde filterliyen funksiya
+function filterForBrand(arg) {
+    markNone.style.display = 'none';
+    main.style.display = "block";
+    footer.style.display = "block";
+    header.style.display = "block";
+    cards.innerHTML = "";
+    data.cars.filter(item => {
+        if (arg == item.brand.toLowerCase()) {
+            cards.innerHTML += `
+                    <div class="card">
+                    <div class="card-img">
+                        <img src="${item.images[0]}" alt="">
+                        <i class="fa-regular fa-heart" onclick="like(this, ${item.id})"></i>
+                        <span class="df">
+                            <i class="fa-solid fa-crown"></i>
+                            <i class="fa-solid fa-gem"></i>
+                        </span>
+                    </div>
+                    <div class="card-sum">
+                        <h3>${item.price} ${item.currency}</h3>
+                        <p>${item.brand} ${item.model}</p>
+                        <p>${item.year}, ${item.engine}L, ${item.odometer} ${item.odometerUnit}</p>
+                        <span>${item.city}, bugun 16:00</span>
+                    </div>
+                </div>`
+        }
+    })
+}
 
 //masinlari like etmek ve secilmislere atmaq
 let f = true;
@@ -1123,7 +1155,6 @@ function changePage(x){
         fabars.style.color = '#ca1016'
         bar.style.color = '#ca1016'
         links.style.display = 'none'
-    
     }
     else if(x == 'home') {
         liked.style.color = 'initial'
@@ -1131,30 +1162,36 @@ function changePage(x){
         home.style.color = '#ca1016'
         fahouse.style.color = '#ca1016'
         header.style.display = 'initial'
-        showCard()
+        fabars.style.color = '#8d94ad'
+        bar.style.color = 'initial'
+        showCard();
     }
 }
 
 const links = document.querySelector('#links')
 const selects = document.querySelector('#selects')
 const adds = document.querySelector('#adds')
+
 //mobildeki markalari acir
 function openNewSec(arg) {
-    if (arg == 'filt') {
-        filtersNone.style.display = 'block'
-        footer.style.display = 'none'
-        links.style.display = 'none'
-        selects.style.display = 'none'
-        adds.style.display = 'none'
-        main.style.display = 'none'
-    }else if (arg == 'mark'){
-        filtersNone.style.display = 'none'
-        footer.style.display = 'none'
-        links.style.display = 'none'
-        selects.style.display = 'none'
-        adds.style.display = 'none'
-        main.style.display = 'none'
-        markNone.style.display = 'block'
+    if (arg == "filt") {
+        filtersNone.style.display = "block";
+        footer.style.display = "none";
+        // header.style.display = "none";
+        links.style.display = 'none';
+        logo.style.display = 'none';
+        selects.style.display = 'none';
+        adds.style.display = 'none';
+        main.style.display = "none";
+    } else {
+        footer.style.display = "none";
+        links.style.display = 'none';
+        selects.style.display = 'none';
+        adds.style.display = 'none';
+        logo.style.display = 'none';
+        // header.style.display = "none";
+        main.style.display = "none";
+        markNone.style.display = "block";
     }
 }
 

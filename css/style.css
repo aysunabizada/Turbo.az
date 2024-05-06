@@ -359,7 +359,7 @@ input[type='checkbox']{accent-color: var(--red);}
 .search i{
     color: #8d94ad;
     position: absolute;
-    bottom: 89.6%;
+    bottom: 87%;
     left: 30px;
     z-index: 99999999999;
 }
